@@ -27,8 +27,8 @@ public class EscolhaseuJogo extends AppCompatActivity {
     }
     public void abrirteladeselecao(){
         Intent intent = new Intent(this, TeladeSelecao.class);
-        startActivity(intent);
         Toast.makeText(this,"Selecione Seis numeros",Toast.LENGTH_SHORT).show();
+        startActivity(intent);
         finish();
         System.exit(0);
     }

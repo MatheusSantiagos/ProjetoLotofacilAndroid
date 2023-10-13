@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Voltar"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#E6103B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,10 +34,11 @@
 
     <Button
         android:id="@+id/botaoacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="193dp"
+        android:layout_height="50dp"
         android:onClick="sorteados"
         android:text="Sorteio"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#EDD87B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152"
+        app:layout_constraintVertical_bias="0.221"
         app:srcCompat="@drawable/greencircles" />
 
     <TextView
@@ -144,6 +146,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Resultado"
+        android:textColor="#FFFFFF"
         app:backgroundTint="#439F47"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -47,11 +47,15 @@ public class MainActivity extends AppCompatActivity {
     public void teladecreditos(){
         Intent intent = new Intent(this,TeladeCreditos.class);
         startActivity(intent);
+        finish();
+        System.exit(0);
     }
 
     public void abrirteladeselecao(){
         Intent intent = new Intent(this, EscolhaseuJogo.class);
         startActivity(intent);
+        finish();
+        System.exit(0);
     }
     public void sair(){
       finish();
