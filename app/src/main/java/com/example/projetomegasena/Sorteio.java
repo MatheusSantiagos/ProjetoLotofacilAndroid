@@ -94,6 +94,9 @@ public class Sorteio extends AppCompatActivity {
 
                 startActivity(intent);
 
+                finish();
+                System.exit(0);
+
             }else{
                 Intent intent = new Intent(this, Resultadodocomparacao.class);
 
@@ -104,6 +107,9 @@ public class Sorteio extends AppCompatActivity {
                 intent.putStringArrayListExtra("valoreschecados", valorescheck);
 
                 startActivity(intent);
+
+                finish();
+                System.exit(0);
 
             }
 

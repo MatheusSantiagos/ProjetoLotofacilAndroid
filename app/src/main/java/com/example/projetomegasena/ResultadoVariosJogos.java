@@ -138,6 +138,8 @@ public class ResultadoVariosJogos extends AppCompatActivity {
     public void voltarmenuprincipal(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        finish();
+        System.exit(0);
     }
 
 

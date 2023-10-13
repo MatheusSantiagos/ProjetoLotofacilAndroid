@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void abrirteladeselecao(){
-        Intent intent = new Intent(this, TeladeSelecao.class);
+        Intent intent = new Intent(this, EscolhaseuJogo.class);
         startActivity(intent);
     }
     public void sair(){

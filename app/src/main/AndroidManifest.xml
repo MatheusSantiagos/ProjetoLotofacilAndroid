@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ProjetoMegasena"
         tools:targetApi="31">
         <activity
+            android:name=".EscolhaseuJogo"
+            android:exported="false" />
+        <activity
             android:name=".TeladeCreditos"
             android:exported="false" />
         <activity

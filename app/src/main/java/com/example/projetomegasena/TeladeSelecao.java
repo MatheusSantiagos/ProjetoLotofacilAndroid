@@ -173,6 +173,8 @@ public class TeladeSelecao extends AppCompatActivity {
             }
             intent.putStringArrayListExtra("valoreschecados", valorescheck);
             startActivity(intent);
+            finish();
+            System.exit(0);
         } else{
             Toast.makeText(this,"Selecione os numeros primeiro", Toast.LENGTH_SHORT).show();
         }
