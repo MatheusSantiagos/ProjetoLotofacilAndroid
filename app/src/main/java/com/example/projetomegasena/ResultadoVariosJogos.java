@@ -13,9 +13,7 @@ import java.util.ArrayList;
 
 public class ResultadoVariosJogos extends AppCompatActivity {
     int jogonum = 1, i = 0, cont;
-    private Button botaoprox;
-    private Button botaoant;
-    private Button conferidor;
+    private Button botaoprox,botaoant,conferidor;
     ArrayList<Integer> listadenumeros2 = new ArrayList<Integer>();
     ArrayList<String> valoresparachecktemp = new ArrayList();
 
@@ -29,6 +27,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
         conferidor = findViewById(R.id.conferes);
 
         botaoprox = findViewById(R.id.proxjogo);
+        //avanca ao proximo jogo com contador, e libera o botao de conferir
         botaoprox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,8 +47,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
                 if(jogonum > 1){
                     jogonum--;
                 }else{
-                   Toast.makeText(getApplication().getBaseContext(),"Nao existe jogo anterior" , Toast.LENGTH_SHORT).show();
-                }
+                   Toast.makeText(getApplication().getBaseContext(),"Nao existe jogo anterior" , Toast.LENGTH_SHORT).show();}
             }
         });
     }
@@ -66,6 +64,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
         TextView numerosorte3 = findViewById(R.id.textView35);    TextView numerosorte4 = findViewById(R.id.textView36);
         TextView numerosorte5 = findViewById(R.id.textView37);    TextView numerosorte6 = findViewById(R.id.textView38);
 
+        //limpa o arraylist temporario, chama o comparador e devolve o numero de resultados iguais entre as duas arraylists, desativo o botao de conferir até avancar ao proximo jogo
         if(jogonum == 1){
             valoresparachecktemp.clear();
             valoresparachecktemp = getIntent().getStringArrayListExtra("valorescheckjogoum");
@@ -84,12 +83,11 @@ public class ResultadoVariosJogos extends AppCompatActivity {
         }
 
         if(jogonum == 2){
-
             valoresparachecktemp.clear();
             valoresparachecktemp = getIntent().getStringArrayListExtra("valorescheckjogodois");
             numerodojogo.setText("Jogo 2:");
-
             comparador(valoresparachecktemp);
+
             resultadocompar.setText(":"+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
@@ -98,7 +96,6 @@ public class ResultadoVariosJogos extends AppCompatActivity {
 
         }
         if(jogonum == 3){
-
             valoresparachecktemp.clear();
             valoresparachecktemp = getIntent().getStringArrayListExtra("valorescheckjogotres");
 
@@ -111,30 +108,28 @@ public class ResultadoVariosJogos extends AppCompatActivity {
                 numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
                 numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
                 numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
-                conferidor.setEnabled(false);
-            }
-
+                conferidor.setEnabled(false);}
         }
     }
 
+    //realiza a comparacao de elementos presentes nas arraylist de jogos feitos pelo usuario
     public int comparador(ArrayList valoresparachecktemp){
         int auxelement = 0; int auxelement3 = 0;
         Object auxelement4, auxelement2;
         cont = 0;
+
         for(i=0; i< valoresparachecktemp.size(); i++){
             for(int j=0; j<valoresparachecktemp.size(); j++){
                 auxelement2 = valoresparachecktemp.get(i);
                 auxelement3 = Integer.valueOf(auxelement2.toString());
                 auxelement4 = listadenumeros2.get(j); auxelement = (Integer) auxelement4;
                 if(auxelement == auxelement3){
-                    cont++;
-                }
+                    cont++;}
             }
-
         }
-    return cont;
-    }
+    return cont;}
 
+    //retorna ao menu principal
     public void voltarmenuprincipal(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);

@@ -47,6 +47,7 @@
         android:id="@+id/voltar3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="voltarmenuprincipal"
         android:text="Sair"
         android:textColor="#FFFFFF"
         app:backgroundTint="#E6103B"

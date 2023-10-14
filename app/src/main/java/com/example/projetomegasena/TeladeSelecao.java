@@ -19,40 +19,17 @@ import java.util.Set;
 
 public class TeladeSelecao extends AppCompatActivity {
     ArrayList<String> valorescheck = new ArrayList<>(6);
-    ArrayList<String> valorescheckjogo1 = new ArrayList<>(6);
-    ArrayList<String> valorescheckjogo2 = new ArrayList<>(6);
-    ArrayList<String> valorescheckjogo3 = new ArrayList<>(6);
+    ArrayList<String> valorescheckjogo1 = new ArrayList<>(6); ArrayList<String> valorescheckjogo2 = new ArrayList<>(6); ArrayList<String> valorescheckjogo3 = new ArrayList<>(6);
+
     CheckBox[] cba;
-    private Button botao2;
-    private Button botao3;
     private Button botao4;
-    int i =0, cont=0, jogos=0;
+    int i =0, cont=0, jogos=1;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_telade_selecao);
 
-        botao2 = findViewById(R.id.voltar);
-        botao2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                voltarmenuprincipal();
-            }
-        });
-        botao3 = findViewById(R.id.prosseguir);
-        botao3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                teladesorteio();
-            }
-        });
-
-        botao4 = findViewById(R.id.newgame);
-        botao4.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){criarnovojogo();}
-        });
 
         //declaracao dos botoes de checkbox
         cba = new CheckBox[]{
@@ -65,14 +42,13 @@ public class TeladeSelecao extends AppCompatActivity {
                 (CheckBox)findViewById(R.id.checkBox7), (CheckBox)findViewById(R.id.checkBox17), (CheckBox)findViewById(R.id.checkBox27),
                 (CheckBox)findViewById(R.id.checkBox8), (CheckBox)findViewById(R.id.checkBox18), (CheckBox)findViewById(R.id.checkBox28),
                 (CheckBox)findViewById(R.id.checkBox9), (CheckBox)findViewById(R.id.checkBox19), (CheckBox)findViewById(R.id.checkBox29),
-                (CheckBox)findViewById(R.id.checkBox10), (CheckBox)findViewById(R.id.checkBox20), (CheckBox)findViewById(R.id.checkBox30)
-                
-        };
+                (CheckBox)findViewById(R.id.checkBox10), (CheckBox)findViewById(R.id.checkBox20), (CheckBox)findViewById(R.id.checkBox30)};
+
         for (CheckBox cb:cba){
             cb.setOnCheckedChangeListener(cbListener);
         }
-
     }
+
     CompoundButton.OnCheckedChangeListener cbListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
@@ -92,7 +68,7 @@ public class TeladeSelecao extends AppCompatActivity {
             marcoutodosedesabilitar(cba);
         }
     };
-
+    //desabilita checkboxes quando chega a 6 marcados
     private void marcoutodosedesabilitar(CheckBox checkBoxes[]){
         int contacheck =0;
         for (CheckBox cb:checkBoxes){
@@ -106,8 +82,8 @@ public class TeladeSelecao extends AppCompatActivity {
             }
         }
     }
-
-    public void voltarmenuprincipal(){
+    //retorna ao menu Principal
+    public void voltarmenuprincipal(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
@@ -122,35 +98,43 @@ public class TeladeSelecao extends AppCompatActivity {
 
     }
 
-    public void criarnovojogo(){
-            jogos++;
+    //ao pressionar o botao cria um novo jogo com um limite de até 3 jogos por vez, reiniciando a contagem de checkbox e reativando
+    public void criarnovojogo(View view){
             Intent intent = new Intent (this, Sorteio.class);
-            if(jogos==1){
+
+            if(jogos==1 && valorescheck.size() ==6){
                 Toast.makeText(this,"Jogo "+jogos+" registrado",Toast.LENGTH_LONG).show();
                 valorescheckjogo1 = (ArrayList<String>)valorescheck.clone();
                 intent.putStringArrayListExtra("valorescheckjogoum",valorescheckjogo1);
                 valorescheck.clear();
                 reabilitar(cba);
-            }
-            if(jogos==2){
+                jogos++;}
+
+            if(jogos==2 && valorescheck.size() ==6){
                 Toast.makeText(this,"Jogo "+jogos+" registrado",Toast.LENGTH_SHORT).show();
                 valorescheckjogo2 = (ArrayList<String>)valorescheck.clone();
                 intent.putStringArrayListExtra("valorecheckjogodois",valorescheckjogo2);
                 valorescheck.clear();
                 reabilitar(cba);
-            }
-            if(jogos ==3){
-                Toast.makeText(this,"Jogo "+jogos+" registrado",Toast.LENGTH_SHORT).show();
+                jogos++;}
+
+            if(jogos ==3 && valorescheck.size() ==6){
+                Toast.makeText(this,"Jogo "+jogos+" registrado, Numero de Jogos Excedido",Toast.LENGTH_SHORT).show();
                 valorescheckjogo3 = (ArrayList<String>)valorescheck.clone();
                 intent.putStringArrayListExtra("valorescheckjogotres",valorescheckjogo3);
-            }
+                jogos++;}
+
             if(jogos>3){
-                Toast.makeText(this,"Numero de Jogos Excedido",Toast.LENGTH_SHORT).show();
-            }
+                botao4.setEnabled(false);
+                }
+
+            if(valorescheck.size()<6 && valorescheck.size() >= 1){
+                Toast.makeText(this,"Selecione todos os numeros antes de fazer um jogo",Toast.LENGTH_SHORT).show();}
 
     }
 
-    public void teladesorteio(){
+    //avanca para a tela de sorteio carregando os valores selecionados das checkboxes de um ou mais jogos
+    public void teladesorteio(View view){
 
         if(valorescheck.size() ==6){
             Intent intent = new Intent(this, Sorteio.class);
@@ -180,6 +164,7 @@ public class TeladeSelecao extends AppCompatActivity {
         }
     }
 
+    //reabilita checkbox em casos de novos jogos
     private void reabilitar(CheckBox checkBoxes[]){
       for(CheckBox cb:cba){
           if(cb.isChecked()){

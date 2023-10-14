@@ -10,54 +10,27 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button botao1;
-    private Button botaodesaida;
-    public Button creditos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        botao1 = findViewById(R.id.iniciarselecao);
-        botao1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                abrirteladeselecao();
-            }
-        });
-
-        botaodesaida = findViewById(R.id.encerrarapp);
-        botaodesaida.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    sair();
-                }
-        });
-
-        creditos = findViewById(R.id.btcredits);
-        creditos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                teladecreditos();
-            }
-        });
-
     }
-
-    public void teladecreditos(){
+    //abre tela de creditos
+    public void teladecreditos(View view){
         Intent intent = new Intent(this,TeladeCreditos.class);
         startActivity(intent);
         finish();
         System.exit(0);
     }
-
-    public void abrirteladeselecao(){
+    //vai para o menu de selecao de jogo
+    public void abrirteladeselecao(View view){
         Intent intent = new Intent(this, EscolhaseuJogo.class);
         startActivity(intent);
         finish();
         System.exit(0);
     }
-    public void sair(){
+    //encerra o aplicativo
+    public void sair(View view){
       finish();
       System.exit(0);
     }

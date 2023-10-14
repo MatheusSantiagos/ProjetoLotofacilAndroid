@@ -16,8 +16,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class Sorteio extends AppCompatActivity {
-    private Button botao4;
-    private Button botao5;
+
     ArrayList<Integer> listadenumeros = new ArrayList<Integer>();
 
     @SuppressLint("MissingInflatedId")
@@ -25,22 +24,6 @@ public class Sorteio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sorteio);
-
-        botao4 = findViewById(R.id.voltar2);
-        botao4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                voltarmenuprincipal();
-            }
-        });
-
-        botao5 = findViewById(R.id.resultadosorte);
-        botao5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultadodacomparacao();
-            }
-        });
     }
     public void sorteados(View v){
         //cria um array para numeros sorteados
@@ -64,20 +47,20 @@ public class Sorteio extends AppCompatActivity {
 
         casa1.setText("" +listadenumeros.get(0)); casa2.setText("" +listadenumeros.get(1));
         casa3.setText("" +listadenumeros.get(2)); casa4.setText("" +listadenumeros.get(3));
-        casa5.setText("" +listadenumeros.get(4)); casa6.setText("" +listadenumeros.get(5));
-    }
+        casa5.setText("" +listadenumeros.get(4)); casa6.setText("" +listadenumeros.get(5));}
 
-    public void voltarmenuprincipal(){
+    public void voltarmenuprincipal(View view){
         Intent intent = new Intent(this,TeladeSelecao.class);
         startActivity(intent);
         finish();
-        System.exit(0);
-    }
-    public void resultadodacomparacao(){
+        System.exit(0);}
+
+    //carrega os dados dos jogos feitos pelo usuario e os separa para qual tela de resultado serao enviados
+    public void resultadodacomparacao(View view){
         if(listadenumeros.size() != 0){
             ArrayList<String> tempjgum = getIntent().getStringArrayListExtra("valorescheckjogoum");
             if(tempjgum != null){
-
+                //quando usuario gerar mais de um jogo ele sera separado e enviado para tela de multiplos resultados
                 Intent intent = new Intent(this, ResultadoVariosJogos.class);
                 intent.putIntegerArrayListExtra("sorteiodenumeros", listadenumeros);
 
@@ -98,6 +81,7 @@ public class Sorteio extends AppCompatActivity {
                 System.exit(0);
 
             }else{
+                //quando o usuario gerar somente um jogo ele sera enviado para a tela de resultado unico
                 Intent intent = new Intent(this, Resultadodocomparacao.class);
 
                 intent.putIntegerArrayListExtra("sorteiodenumeros", listadenumeros);
@@ -110,12 +94,9 @@ public class Sorteio extends AppCompatActivity {
 
                 finish();
                 System.exit(0);
-
             }
-
         }else{
-            Toast.makeText(this,"Faça o sorteio primeiro", Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(this,"Faça o sorteio primeiro", Toast.LENGTH_SHORT).show();}
 
     }
 }
