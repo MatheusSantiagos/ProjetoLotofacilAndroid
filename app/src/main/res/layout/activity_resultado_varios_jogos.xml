@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ResultadoVariosJogos">
 
+    <ImageButton
+        android:id="@+id/imageButton5"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
+        android:background="@drawable/red_circle"
+        android:onClick="voltarmenuprincipal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/x_exit_white" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="356dp"
@@ -89,14 +104,14 @@
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="170dp"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/logomegaverde" />
+        app:srcCompat="@drawable/logomegaverde2" />
 
     <Button
         android:id="@+id/proxjogo"
@@ -127,52 +142,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.767" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="voltarmenuprincipal"
-        android:text="Sair"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <Button
-        android:id="@+id/conferes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="Alterador"
-        android:text="Conferir"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#E1CE2B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.622" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anonymous_pro"
-        android:text="Resultado:"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
-
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="357dp"
         android:layout_height="69dp"
         android:orientation="vertical"
@@ -251,18 +222,49 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/Resultadocompar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anonymous_pro"
-        android:text="x"
-        android:textSize="20sp"
+    <LinearLayout
+        android:layout_width="357dp"
+        android:layout_height="69dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintVertical_bias="0.534">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="81dp"
+            android:layout_height="31dp"
+            android:fontFamily="@font/anonymous_pro"
+            android:text="Resultado:"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/Resultadocompar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:paddingHorizontal="150dp"
+                android:text="x"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/conferes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#00FFFFFF"
+                android:onClick="Alterador"
+                android:scaleType="centerInside"
+                android:src="@drawable/style_conferidor" />
+        </TableRow>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

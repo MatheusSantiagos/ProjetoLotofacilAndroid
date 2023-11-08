@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 
 public class ResultadoVariosJogos extends AppCompatActivity {
     int jogonum = 1, i = 0, cont;
-    private Button botaoprox,botaoant,conferidor;
+    private Button botaoprox,botaoant;
+    private ImageButton conferidor;
     ArrayList<Integer> listadenumeros2 = new ArrayList<Integer>();
     ArrayList<String> valoresparachecktemp = new ArrayList();
 

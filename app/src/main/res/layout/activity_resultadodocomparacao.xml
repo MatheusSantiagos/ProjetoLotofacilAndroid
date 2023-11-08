@@ -6,31 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".Resultadodocomparacao">
 
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
+        android:background="@drawable/red_circle"
+        android:onClick="voltarmenuprincipal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/x_exit_white" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="170dp"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/logomegaverde" />
+        app:srcCompat="@drawable/logomegaverde2" />
 
     <Button
         android:id="@+id/botaodecomparacao"
         android:layout_width="231dp"
         android:layout_height="60dp"
         android:onClick="compar"
-        android:text="Comparar"
+        android:text="Conferir"
         android:textColor="#FFFFFF"
         app:backgroundTint="#80AC6F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/comparacao"
@@ -42,21 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.491" />
-
-    <Button
-        android:id="@+id/voltar3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="voltarmenuprincipal"
-        android:text="Sair"
-        android:textColor="#FFFFFF"
-        app:backgroundTint="#E6103B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
 
     <TextView
         android:id="@+id/textView3"
