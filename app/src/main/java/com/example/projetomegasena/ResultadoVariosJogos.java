@@ -84,7 +84,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
 
 
             resultblink(resultadocompar);
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
@@ -107,7 +107,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             comparador(valoresparachecktemp);
 
             resultblink(resultadocompar);
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
@@ -130,7 +130,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
                 comparador(valoresparachecktemp);
 
                 resultblink(resultadocompar);
-                resultadocompar.setText(": "+cont);
+                resultadocompar.setText(" "+cont);
                 numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
                 numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
                 numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));

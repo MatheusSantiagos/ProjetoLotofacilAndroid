@@ -62,7 +62,7 @@ public class Quina_Resultado extends AppCompatActivity {
 
         TextView compa = findViewById(R.id.comparacao);
         resultblink(compa);
-        compa.setText(": " +cont);
+        compa.setText(" " +cont);
 
         if(cont == 5){
             victory();}

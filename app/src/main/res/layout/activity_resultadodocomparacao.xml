@@ -52,25 +52,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.491" />
+        app:layout_constraintVertical_bias="0.502" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/anonymous_pro"
-        android:text="Numeros Acertados"
+        android:text="Numeros Acertados:"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintVertical_bias="0.5" />
 
     <LinearLayout
         android:layout_width="356dp"
@@ -95,48 +98,17 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:filterTouchesWhenObscured="false"
-            android:fitsSystemWindows="false"
+            android:gravity="center"
             android:paddingHorizontal="45dp"
             android:paddingVertical="10dp">
 
             <TextView
-                android:id="@+id/numsel06"
+                android:id="@+id/numsel01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
-                android:paddingHorizontal="6dp"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsel05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:paddingHorizontal="6dp"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsel04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:paddingHorizontal="6dp"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsel03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -146,18 +118,48 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/numsel01"
+                android:id="@+id/numsel03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:paddingHorizontal="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsel04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:paddingHorizontal="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsel05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:paddingHorizontal="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsel06"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
                 android:textSize="18sp"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
                 android:textStyle="bold" />
         </TableRow>
 
@@ -165,7 +167,7 @@
 
     <LinearLayout
         android:layout_width="357dp"
-        android:layout_height="69dp"
+        android:layout_height="71dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -180,54 +182,24 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/anonymous_pro"
             android:text="Numeros Sorteados:"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:filterTouchesWhenObscured="false"
-            android:fitsSystemWindows="false"
+            android:gravity="center"
             android:paddingHorizontal="45dp"
             android:paddingVertical="10dp">
 
             <TextView
-                android:id="@+id/numsort06"
+                android:id="@+id/numsort01"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
                 android:textSize="18sp"
-                android:paddingHorizontal="6dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsort05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:textSize="18sp"
-                android:paddingHorizontal="6dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsort04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:textSize="18sp"
-                android:paddingHorizontal="6dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/numsort03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/anonymous_pro"
-                android:text="[ ]"
-                android:textSize="18sp"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -237,17 +209,47 @@
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
                 android:textSize="18sp"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/numsort01"
+                android:id="@+id/numsort03"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
                 android:text="[ ]"
                 android:textSize="18sp"
-                android:paddingHorizontal="6dp"
+                android:paddingHorizontal="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsort04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsort05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/numsort06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/anonymous_pro"
+                android:text="[ ]"
+                android:textSize="18sp"
+                android:paddingHorizontal="10dp"
                 android:textStyle="bold" />
         </TableRow>
 

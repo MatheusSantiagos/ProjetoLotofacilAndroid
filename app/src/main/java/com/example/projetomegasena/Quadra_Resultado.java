@@ -62,7 +62,7 @@ public class Quadra_Resultado extends AppCompatActivity {
 
         TextView compa = findViewById(R.id.comparacao);
         resultblink(compa);
-        compa.setText(": " +cont);
+        compa.setText(" " +cont);
 
         if(cont == 4){
             victory();}

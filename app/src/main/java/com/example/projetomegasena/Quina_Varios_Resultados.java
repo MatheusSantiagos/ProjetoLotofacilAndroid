@@ -85,7 +85,7 @@ public class Quina_Varios_Resultados extends AppCompatActivity {
             comparador(valoresparachecktemp);
 
             resultblink(resultadocompar);
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4));
@@ -108,7 +108,7 @@ public class Quina_Varios_Resultados extends AppCompatActivity {
             comparador(valoresparachecktemp);
 
             resultblink(resultadocompar);
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4));
@@ -131,7 +131,7 @@ public class Quina_Varios_Resultados extends AppCompatActivity {
                 comparador(valoresparachecktemp);
 
                 resultblink(resultadocompar);
-                resultadocompar.setText(": "+cont);
+                resultadocompar.setText(" "+cont);
                 numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
                 numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
                 numeroesc5.setText(""+valoresparachecktemp.get(4));

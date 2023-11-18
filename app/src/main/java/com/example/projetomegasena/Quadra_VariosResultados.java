@@ -86,7 +86,7 @@ public class Quadra_VariosResultados extends AppCompatActivity {
             comparador(valoresparachecktemp);
             resultblink(resultadocompar);
 
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
 
@@ -109,7 +109,7 @@ public class Quadra_VariosResultados extends AppCompatActivity {
             comparador(valoresparachecktemp);
             resultblink(resultadocompar);
 
-            resultadocompar.setText(": "+cont);
+            resultadocompar.setText(" "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             if(cont == 4){
@@ -132,7 +132,7 @@ public class Quadra_VariosResultados extends AppCompatActivity {
                 comparador(valoresparachecktemp);
                 resultblink(resultadocompar);
 
-                resultadocompar.setText(": "+cont);
+                resultadocompar.setText(" "+cont);
                 numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
                 numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
                 if(cont == 4){

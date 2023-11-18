@@ -196,7 +196,7 @@ public class Selecao_Quina extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.scroll_toast, (ViewGroup) findViewById(R.id.toastupdownscroll));
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER,500,100);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
 

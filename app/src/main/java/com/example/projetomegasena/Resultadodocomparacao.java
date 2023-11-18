@@ -63,7 +63,7 @@ public class Resultadodocomparacao extends AppCompatActivity {
 
         TextView compa = findViewById(R.id.comparacao);
         resultblink(compa);
-        compa.setText(": " +cont);
+        compa.setText(" " +cont);
 
         if(cont == 6){
             victory();}
