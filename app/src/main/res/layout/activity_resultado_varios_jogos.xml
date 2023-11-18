@@ -114,7 +114,7 @@
         app:srcCompat="@drawable/logomegaverde2" />
 
     <Button
-        android:id="@+id/proxjogo"
+        android:id="@+id/proximaquadra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Proximo Jogo"
@@ -129,7 +129,7 @@
         app:rippleColor="#83AB71" />
 
     <Button
-        android:id="@+id/jogoant"
+        android:id="@+id/quadraanterior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jogo Anterior"
@@ -238,7 +238,7 @@
             android:layout_width="81dp"
             android:layout_height="31dp"
             android:fontFamily="@font/anonymous_pro"
-            android:text="Resultado:"
+            android:text="Resultado"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -252,12 +252,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/anonymous_pro"
-                android:paddingHorizontal="150dp"
+                android:paddingHorizontal="140dp"
                 android:text="x"
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/conferes"
+                android:id="@+id/conferidorquadra"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="#00FFFFFF"

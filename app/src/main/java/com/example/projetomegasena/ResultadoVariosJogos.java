@@ -3,8 +3,15 @@ package com.example.projetomegasena;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,6 +25,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
     private ImageButton conferidor;
     ArrayList<Integer> listadenumeros2 = new ArrayList<Integer>();
     ArrayList<String> valoresparachecktemp = new ArrayList();
+    Animation animBlink;
 
 
     @Override
@@ -25,10 +33,11 @@ public class ResultadoVariosJogos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado_varios_jogos);
         listadenumeros2 = getIntent().getIntegerArrayListExtra("sorteiodenumeros");
+        animBlink = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink);
 
-        conferidor = findViewById(R.id.conferes);
+        conferidor = findViewById(R.id.conferidorquadra);
 
-        botaoprox = findViewById(R.id.proxjogo);
+        botaoprox = findViewById(R.id.proximaquadra);
         //avanca ao proximo jogo com contador, e libera o botao de conferir
         botaoprox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +51,7 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             }
         });
 
-        botaoant = findViewById(R.id.jogoant);
+        botaoant = findViewById(R.id.quadraanterior);
         botaoant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +82,9 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             numerodojogo.setText("Jogo 1:");
             comparador(valoresparachecktemp);
 
-            resultadocompar.setText(":"+cont);
+
+            resultblink(resultadocompar);
+            resultadocompar.setText(": "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
@@ -81,6 +92,11 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             numerosorte1.setText(""+listadenumeros2.get(0));   numerosorte2.setText(""+listadenumeros2.get(1));
             numerosorte3.setText(""+listadenumeros2.get(2));   numerosorte4.setText(""+listadenumeros2.get(3));
             numerosorte5.setText(""+listadenumeros2.get(4));   numerosorte6.setText(""+listadenumeros2.get(5));
+            if(cont == 6){
+                victory();
+            }else{
+                defeat();
+            }
             conferidor.setEnabled(false);
         }
 
@@ -90,10 +106,16 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             numerodojogo.setText("Jogo 2:");
             comparador(valoresparachecktemp);
 
-            resultadocompar.setText(":"+cont);
+            resultblink(resultadocompar);
+            resultadocompar.setText(": "+cont);
             numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
             numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
             numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
+            if(cont == 6){
+                victory();
+            }else{
+                defeat();
+            }
             conferidor.setEnabled(false);
 
         }
@@ -106,12 +128,21 @@ public class ResultadoVariosJogos extends AppCompatActivity {
             }else{
                 numerodojogo.setText("Jogo 3:");
                 comparador(valoresparachecktemp);
-                resultadocompar.setText(":"+cont);
+
+                resultblink(resultadocompar);
+                resultadocompar.setText(": "+cont);
                 numeroesc1.setText(""+valoresparachecktemp.get(0)); numeroesc2.setText(""+valoresparachecktemp.get(1));
                 numeroesc3.setText(""+valoresparachecktemp.get(2)); numeroesc4.setText(""+valoresparachecktemp.get(3));
                 numeroesc5.setText(""+valoresparachecktemp.get(4)); numeroesc6.setText(""+valoresparachecktemp.get(5));
+
+                if(cont == 6){
+                    victory();
+                }else{
+                    defeat();
+                }
                 conferidor.setEnabled(false);}
         }
+
     }
 
     //realiza a comparacao de elementos presentes nas arraylist de jogos feitos pelo usuario
@@ -137,6 +168,38 @@ public class ResultadoVariosJogos extends AppCompatActivity {
         startActivity(intent);
         finish();
         System.exit(0);
+    }
+
+
+    public void resultblink(TextView resultadocompar){
+        //Anima o resultado mostrado em tela
+        resultadocompar.setVisibility(View.VISIBLE);
+        resultadocompar.startAnimation(animBlink);
+
+        //encerra a animacao em tela
+        Handler hand = new Handler();
+        hand.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                resultadocompar.clearAnimation();
+            }
+        },5000);
+    }
+
+    public void victory(){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.congratulations);
+        mediaPlayer.start();
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.victoryscreen, (ViewGroup) findViewById(R.id.sweetvictory));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER,0,-100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+    public void defeat(){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.bluem);
+        mediaPlayer.start();
     }
 
 

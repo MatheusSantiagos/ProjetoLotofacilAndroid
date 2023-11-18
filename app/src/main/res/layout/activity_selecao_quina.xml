@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Selecao_Quina">
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:background="@drawable/red_circle"
+        android:onClick="voltarmenuprincipal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:srcCompat="@drawable/x_exit_white" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="158dp"
+        android:layout_height="47dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/quinalogo" />
+
+    <TextView
+        android:id="@+id/Teste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[ ]"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="142dp"
+        android:layout_height="53dp"
+        android:fontFamily="@font/bowlby_one"
+        android:onClick="numerosselecionados"
+        android:text="Conferir"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#D6C577"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:background="@drawable/purple_circle"
+        android:onClick="teladesorteio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941"
+        app:srcCompat="@drawable/white_check_arrow" />
+
+    <Button
+        android:id="@+id/newgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bowlby_one"
+        android:onClick="criarnovojogo"
+        android:text="Novo Jogo+"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#422E5D"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="368dp"
+        android:layout_height="371dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRow1"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#FAF4E3"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="1"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="2"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="3"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="4"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="67dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="5"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox6"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="6"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRow2"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="58dp"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="7"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="8"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="9"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="10"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="11"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="12"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow3"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="13"
+                   />
+
+                <CheckBox
+                    android:id="@+id/checkBox14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="14"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="15"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="16"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="17"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="18"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow4"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="19" />
+
+                <CheckBox
+                    android:id="@+id/checkBox20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="20"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="21"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="22"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="23"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="24"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinarLayoutRow5"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="25"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="26"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="27"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="28"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="29"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="30"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow6"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="31"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="32"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="33"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="34"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="35"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="36"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow7"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="37"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="38"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="39"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="40"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="41"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="42"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow8"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="43"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="44"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="45"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="46"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="47"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="48"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow9"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="49"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="50"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="51"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="52"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="53"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="54"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow10"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="55"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="56"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="57"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="58"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="59" />
+
+                <CheckBox
+                    android:id="@+id/checkBox60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/quina_checkbox"
+                    app:buttonTint="#673AB7"
+                    android:text="60"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

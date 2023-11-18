@@ -50,7 +50,6 @@
             android:layout_height="143dp"
             android:layout_marginVertical="20dp"
             android:background="#FFFFFF"
-            android:onClick="embreve"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/botao_quina" />
 

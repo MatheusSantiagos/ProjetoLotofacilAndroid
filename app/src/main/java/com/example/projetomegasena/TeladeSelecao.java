@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.Layout;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +36,7 @@ public class TeladeSelecao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_telade_selecao);
 
+        showscroll();
 
         //declaracao dos botoes de checkbox
         cba = new CheckBox[]{
@@ -42,7 +49,18 @@ public class TeladeSelecao extends AppCompatActivity {
                 (CheckBox)findViewById(R.id.checkBox7), (CheckBox)findViewById(R.id.checkBox17), (CheckBox)findViewById(R.id.checkBox27),
                 (CheckBox)findViewById(R.id.checkBox8), (CheckBox)findViewById(R.id.checkBox18), (CheckBox)findViewById(R.id.checkBox28),
                 (CheckBox)findViewById(R.id.checkBox9), (CheckBox)findViewById(R.id.checkBox19), (CheckBox)findViewById(R.id.checkBox29),
-                (CheckBox)findViewById(R.id.checkBox10), (CheckBox)findViewById(R.id.checkBox20), (CheckBox)findViewById(R.id.checkBox30)};
+                (CheckBox)findViewById(R.id.checkBox10), (CheckBox)findViewById(R.id.checkBox20), (CheckBox)findViewById(R.id.checkBox30),
+
+                (CheckBox)findViewById(R.id.checkBox31), (CheckBox)findViewById(R.id.checkBox41), (CheckBox)findViewById(R.id.checkBox51),
+                (CheckBox)findViewById(R.id.checkBox32), (CheckBox)findViewById(R.id.checkBox42), (CheckBox)findViewById(R.id.checkBox52),
+                (CheckBox)findViewById(R.id.checkBox33), (CheckBox)findViewById(R.id.checkBox43), (CheckBox)findViewById(R.id.checkBox53),
+                (CheckBox)findViewById(R.id.checkBox34), (CheckBox)findViewById(R.id.checkBox44), (CheckBox)findViewById(R.id.checkBox54),
+                (CheckBox)findViewById(R.id.checkBox35), (CheckBox)findViewById(R.id.checkBox45), (CheckBox)findViewById(R.id.checkBox55),
+                (CheckBox)findViewById(R.id.checkBox36), (CheckBox)findViewById(R.id.checkBox46), (CheckBox)findViewById(R.id.checkBox56),
+                (CheckBox)findViewById(R.id.checkBox37), (CheckBox)findViewById(R.id.checkBox47), (CheckBox)findViewById(R.id.checkBox57),
+                (CheckBox)findViewById(R.id.checkBox38), (CheckBox)findViewById(R.id.checkBox48), (CheckBox)findViewById(R.id.checkBox58),
+                (CheckBox)findViewById(R.id.checkBox39), (CheckBox)findViewById(R.id.checkBox49), (CheckBox)findViewById(R.id.checkBox59),
+                (CheckBox)findViewById(R.id.checkBox40), (CheckBox)findViewById(R.id.checkBox50), (CheckBox)findViewById(R.id.checkBox60)};
 
         for (CheckBox cb:cba){
             cb.setOnCheckedChangeListener(cbListener);
@@ -124,9 +142,11 @@ public class TeladeSelecao extends AppCompatActivity {
                 intent.putStringArrayListExtra("valorescheckjogotres",valorescheckjogo3);
                 jogos++;}
 
+
             if(jogos>3){
-                botao4.setEnabled(false);
-                }
+            botao4 = findViewById(R.id.newgame);
+            botao4.setEnabled(false);
+            }
 
             if(valorescheck.size()<6 && valorescheck.size() >= 1){
                 Toast.makeText(this,"Selecione todos os numeros antes de fazer um jogo",Toast.LENGTH_SHORT).show();}
@@ -172,6 +192,27 @@ public class TeladeSelecao extends AppCompatActivity {
           }
           cb.setEnabled(true);
       }
+    }
+
+
+    public void showscroll(){
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.scroll_toast, (ViewGroup) findViewById(R.id.toastupdownscroll));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER,300,100);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+
+        Handler hand = new Handler();
+            hand.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), "Selecione Seis Numeros", Toast.LENGTH_SHORT).show();
+                }
+            },100);
+
+
     }
 
 }

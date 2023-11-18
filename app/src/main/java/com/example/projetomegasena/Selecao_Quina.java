@@ -1,0 +1,214 @@
+package com.example.projetomegasena;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Selecao_Quina extends AppCompatActivity {
+    ArrayList<String> valorescheck = new ArrayList<>(5);
+    ArrayList<String> valorescheckjogo1 = new ArrayList<>(5); ArrayList<String> valorescheckjogo2 = new ArrayList<>(5); ArrayList<String> valorescheckjogo3 = new ArrayList<>(5);
+
+    CheckBox[] cba;
+    private Button botao4;
+    int i =0, cont=0, jogos=1;
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_selecao_quina);
+        showscroll();
+
+        //declaracao dos botoes de checkbox
+        cba = new CheckBox[]{
+                (CheckBox)findViewById(R.id.checkBox1), (CheckBox)findViewById(R.id.checkBox11), (CheckBox)findViewById(R.id.checkBox21),
+                (CheckBox)findViewById(R.id.checkBox2), (CheckBox)findViewById(R.id.checkBox12), (CheckBox)findViewById(R.id.checkBox22),
+                (CheckBox)findViewById(R.id.checkBox3), (CheckBox)findViewById(R.id.checkBox13), (CheckBox)findViewById(R.id.checkBox23),
+                (CheckBox)findViewById(R.id.checkBox4), (CheckBox)findViewById(R.id.checkBox14), (CheckBox)findViewById(R.id.checkBox24),
+                (CheckBox)findViewById(R.id.checkBox5), (CheckBox)findViewById(R.id.checkBox15), (CheckBox)findViewById(R.id.checkBox25),
+                (CheckBox)findViewById(R.id.checkBox6), (CheckBox)findViewById(R.id.checkBox16), (CheckBox)findViewById(R.id.checkBox26),
+                (CheckBox)findViewById(R.id.checkBox7), (CheckBox)findViewById(R.id.checkBox17), (CheckBox)findViewById(R.id.checkBox27),
+                (CheckBox)findViewById(R.id.checkBox8), (CheckBox)findViewById(R.id.checkBox18), (CheckBox)findViewById(R.id.checkBox28),
+                (CheckBox)findViewById(R.id.checkBox9), (CheckBox)findViewById(R.id.checkBox19), (CheckBox)findViewById(R.id.checkBox29),
+                (CheckBox)findViewById(R.id.checkBox10), (CheckBox)findViewById(R.id.checkBox20), (CheckBox)findViewById(R.id.checkBox30),
+
+                (CheckBox)findViewById(R.id.checkBox31), (CheckBox)findViewById(R.id.checkBox41), (CheckBox)findViewById(R.id.checkBox51),
+                (CheckBox)findViewById(R.id.checkBox32), (CheckBox)findViewById(R.id.checkBox42), (CheckBox)findViewById(R.id.checkBox52),
+                (CheckBox)findViewById(R.id.checkBox33), (CheckBox)findViewById(R.id.checkBox43), (CheckBox)findViewById(R.id.checkBox53),
+                (CheckBox)findViewById(R.id.checkBox34), (CheckBox)findViewById(R.id.checkBox44), (CheckBox)findViewById(R.id.checkBox54),
+                (CheckBox)findViewById(R.id.checkBox35), (CheckBox)findViewById(R.id.checkBox45), (CheckBox)findViewById(R.id.checkBox55),
+                (CheckBox)findViewById(R.id.checkBox36), (CheckBox)findViewById(R.id.checkBox46), (CheckBox)findViewById(R.id.checkBox56),
+                (CheckBox)findViewById(R.id.checkBox37), (CheckBox)findViewById(R.id.checkBox47), (CheckBox)findViewById(R.id.checkBox57),
+                (CheckBox)findViewById(R.id.checkBox38), (CheckBox)findViewById(R.id.checkBox48), (CheckBox)findViewById(R.id.checkBox58),
+                (CheckBox)findViewById(R.id.checkBox39), (CheckBox)findViewById(R.id.checkBox49), (CheckBox)findViewById(R.id.checkBox59),
+                (CheckBox)findViewById(R.id.checkBox40), (CheckBox)findViewById(R.id.checkBox50), (CheckBox)findViewById(R.id.checkBox60)};
+
+        for (CheckBox cb:cba){
+            cb.setOnCheckedChangeListener(cbListener);
+        }
+    }
+
+    CompoundButton.OnCheckedChangeListener cbListener = new CompoundButton.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            if(compoundButton.isChecked()){
+                if(valorescheck.size()<5){
+                    //coleta os valores nas caixas de seleção
+                    valorescheck.add(compoundButton.getText().toString());
+                    //remove duplicatas
+                    Set<String> valoreschecktemp = new HashSet<>(valorescheck);
+                    valorescheck.clear();
+                    valorescheck.addAll(valoreschecktemp);
+                }
+            }else{
+                //remove valores desmarcados
+                valorescheck.remove(compoundButton.getText().toString());
+            }
+            marcoutodosedesabilitar(cba);
+        }
+    };
+    //desabilita checkboxes quando chega a 6 marcados
+    private void marcoutodosedesabilitar(CheckBox checkBoxes[]){
+        int contacheck =0;
+        for (CheckBox cb:checkBoxes){
+            cb.setEnabled(true);
+            if (cb.isChecked()) contacheck++;
+        }
+        int a = 5;
+        if (a<= contacheck){
+            for (CheckBox cb:checkBoxes){
+                if (!cb.isChecked())cb.setEnabled(false);
+            }
+        }
+    }
+    //retorna ao menu Principal
+    public void voltarmenuprincipal(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+
+    public void numerosselecionados(View v){
+        // imprime valores marcados
+        TextView Testando = findViewById(R.id.Teste);
+        Testando.setText(valorescheck.toString());
+
+    }
+
+    //ao pressionar o botao cria um novo jogo com um limite de até 3 jogos por vez, reiniciando a contagem de checkbox e reativando
+    public void criarnovojogo(View view){
+        Intent intent = new Intent (this, Sorteio.class);
+
+        if(jogos==1 && valorescheck.size() ==5){
+            Toast.makeText(this,"Jogo "+jogos+" registrado",Toast.LENGTH_LONG).show();
+            valorescheckjogo1 = (ArrayList<String>)valorescheck.clone();
+            intent.putStringArrayListExtra("valorescheckjogoum",valorescheckjogo1);
+            valorescheck.clear();
+            reabilitar(cba);
+            jogos++;}
+
+        if(jogos==2 && valorescheck.size() ==5){
+            Toast.makeText(this,"Jogo "+jogos+" registrado",Toast.LENGTH_SHORT).show();
+            valorescheckjogo2 = (ArrayList<String>)valorescheck.clone();
+            intent.putStringArrayListExtra("valorecheckjogodois",valorescheckjogo2);
+            valorescheck.clear();
+            reabilitar(cba);
+            jogos++;}
+
+        if(jogos ==3 && valorescheck.size() ==5){
+            Toast.makeText(this,"Jogo "+jogos+" registrado, Numero de Jogos Excedido",Toast.LENGTH_SHORT).show();
+            valorescheckjogo3 = (ArrayList<String>)valorescheck.clone();
+            intent.putStringArrayListExtra("valorescheckjogotres",valorescheckjogo3);
+            jogos++;
+
+        }
+
+        if(jogos>3){
+            botao4 = findViewById(R.id.newgame);
+            botao4.setEnabled(false);
+        }
+
+        if(valorescheck.size()<5 && valorescheck.size() >= 5){
+            Toast.makeText(this,"Selecione todos os numeros antes de fazer um jogo",Toast.LENGTH_SHORT).show();}
+
+    }
+
+    //avanca para a tela de sorteio carregando os valores selecionados das checkboxes de um ou mais jogos
+    public void teladesorteio(View view){
+
+        if(valorescheck.size() ==5){
+            Intent intent = new Intent(this, Sorteio_Quina.class);
+            if(valorescheckjogo1.isEmpty()){
+                Toast.makeText(this,"Jogo Unico",Toast.LENGTH_SHORT).show();
+            }else{
+                intent.putStringArrayListExtra("valorescheckjogoum",valorescheckjogo1);
+
+                if(valorescheckjogo2.isEmpty()){
+                    valorescheckjogo2 = (ArrayList<String>)valorescheck.clone();
+                    intent.putStringArrayListExtra("valorecheckjogodois",valorescheckjogo2);
+                }else{
+                    intent.putStringArrayListExtra("valorecheckjogodois",valorescheckjogo2);}
+
+                if(valorescheckjogo3.isEmpty()){
+                    valorescheckjogo3 = (ArrayList<String>)valorescheck.clone();
+                    intent.putStringArrayListExtra("valorescheckjogotres",valorescheckjogo3);
+                }else{
+                    intent.putStringArrayListExtra("valorescheckjogotres",valorescheckjogo3);}
+            }
+            intent.putStringArrayListExtra("valoreschecados", valorescheck);
+            startActivity(intent);
+            finish();
+            System.exit(0);
+        } else{
+            Toast.makeText(this,"Selecione os numeros primeiro", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //reabilita checkbox em casos de novos jogos
+    private void reabilitar(CheckBox checkBoxes[]){
+        for(CheckBox cb:cba){
+            if(cb.isChecked()){
+                cb.setChecked(false);
+            }
+            cb.setEnabled(true);
+        }
+    }
+
+    public void showscroll(){
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.scroll_toast, (ViewGroup) findViewById(R.id.toastupdownscroll));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER,500,100);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+
+        Handler hand = new Handler();
+        hand.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(), "Selecione Cinco Numeros", Toast.LENGTH_SHORT).show();
+            }
+        },100);
+
+
+    }
+
+}

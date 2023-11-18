@@ -12,6 +12,33 @@
         android:theme="@style/Theme.ProjetoMegasena"
         tools:targetApi="31">
         <activity
+            android:name=".helpscreen"
+            android:exported="false" />
+        <activity
+            android:name=".Quadra_VariosResultados"
+            android:exported="false" />
+        <activity
+            android:name=".Quadra_Resultado"
+            android:exported="false" />
+        <activity
+            android:name=".Sorteio_Quadra"
+            android:exported="false" />
+        <activity
+            android:name=".Selecao_Quadra"
+            android:exported="false" />
+        <activity
+            android:name=".Quina_Varios_Resultados"
+            android:exported="false" />
+        <activity
+            android:name=".Quina_Resultado"
+            android:exported="false" />
+        <activity
+            android:name=".Sorteio_Quina"
+            android:exported="false" />
+        <activity
+            android:name=".Selecao_Quina"
+            android:exported="false" />
+        <activity
             android:name=".EscolhaseuJogo"
             android:exported="false" />
         <activity
@@ -20,11 +47,6 @@
         <activity
             android:name=".ResultadoVariosJogos"
             android:exported="false" />
-        <activity
-            android:name=".SelecaocomGrid"
-            android:exported="false"
-            android:label="@string/title_activity_selecaocom_grid"
-            android:theme="@style/Theme.ProjetoMegasena" />
         <activity
             android:name=".Resultadodocomparacao"
             android:exported="false" />

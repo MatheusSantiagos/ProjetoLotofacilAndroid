@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class EscolhaseuJogo extends AppCompatActivity {
 
-    public ImageButton avancarmegasena;
+    public ImageButton avancarmegasena,avancarQuina, avancarQuadra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,39 @@ public class EscolhaseuJogo extends AppCompatActivity {
         avancarmegasena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirteladeselecao();
+                jogomega();
+            }
+        });
+        avancarQuina = findViewById(R.id.imageButton2);
+        avancarQuina.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jogoquina();
+            }
+        });
+        avancarQuadra = findViewById(R.id.imageButton3);
+        avancarQuadra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                jogoquadra();
             }
         });
     }
-    public void abrirteladeselecao(){
+    public void jogomega(){
         Intent intent = new Intent(this, TeladeSelecao.class);
-        Toast.makeText(this,"Selecione Seis numeros",Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+    public void jogoquina(){
+        Intent intent = new Intent(this, Selecao_Quina.class);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+    public void jogoquadra(){
+        Intent intent = new Intent(this, Selecao_Quadra.class);
         startActivity(intent);
         finish();
         System.exit(0);

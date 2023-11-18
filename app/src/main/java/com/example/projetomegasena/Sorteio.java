@@ -31,7 +31,7 @@ public class Sorteio extends AppCompatActivity {
         int i,num;
         //randomiza e preenche a array de numeros aleatórios
         for ( i=0; i<6; i++){
-            num = new Random().nextInt(30)+1;
+            num = new Random().nextInt(60)+1;
             if(listadenumeros.contains(num)){
                 i--;
             }else{

@@ -3,6 +3,6 @@
 
     <item android:drawable="@drawable/checkbox_circulo_marcado" android:state_checked="false"/>
     <item android:drawable="@drawable/circulo" android:state_checked="true" />
-    <item android:drawable="@drawable/checkbox_circulo_desative" android:state_activated="false"/>
+    <item android:drawable="@drawable/checkbox_circulo_desative" android:state_enabled="false"/>
 
 </selector>

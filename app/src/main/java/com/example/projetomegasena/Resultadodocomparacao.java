@@ -1,24 +1,31 @@
 package com.example.projetomegasena;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
 
 public class Resultadodocomparacao extends AppCompatActivity {
     int i,cont;
     ArrayList<String> valorescheck2 = new ArrayList();
     ArrayList<Integer> listadenumeros2 = new ArrayList<Integer>();
+    Animation animBlink;
 
     //carrega instancias salvas no sorteio e as arraylist dos checkboxes selecionados
     @Override
@@ -26,7 +33,9 @@ public class Resultadodocomparacao extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultadodocomparacao);
         valorescheck2 = getIntent().getStringArrayListExtra("valoreschecados");
-        listadenumeros2 = getIntent().getIntegerArrayListExtra("sorteiodenumeros");}
+        listadenumeros2 = getIntent().getIntegerArrayListExtra("sorteiodenumeros");
+        animBlink = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.blink);
+    }
 
     //retorna ao menu principal
     public void voltarmenuprincipal(View view){
@@ -34,7 +43,6 @@ public class Resultadodocomparacao extends AppCompatActivity {
         startActivity(intent);
         finish();
         System.exit(0);}
-
 
     public void compar (View view){
         int auxelement = 0; int auxelement3 = 0;
@@ -54,7 +62,14 @@ public class Resultadodocomparacao extends AppCompatActivity {
         }
 
         TextView compa = findViewById(R.id.comparacao);
-        compa.setText(":" +cont);
+        resultblink(compa);
+        compa.setText(": " +cont);
+
+        if(cont == 6){
+            victory();}
+        else{
+            defeat();}
+
         cont =0;
         Collections.sort(valorescheck2);
         Collections.sort(listadenumeros2);
@@ -75,8 +90,36 @@ public class Resultadodocomparacao extends AppCompatActivity {
 
         numerosdosorteio.setText("" +listadenumeros2.get(0)); numerosdosorteio2.setText("" +listadenumeros2.get(1));
         numerosdosorteio3.setText("" +listadenumeros2.get(2)); numerosdosorteio4.setText("" +listadenumeros2.get(3));
-        numerosdosorteio5.setText("" +listadenumeros2.get(4)); numerosdosorteio6.setText("" +listadenumeros2.get(5));
+        numerosdosorteio5.setText("" +listadenumeros2.get(4)); numerosdosorteio6.setText("" +listadenumeros2.get(5));}
 
+    public void resultblink(TextView compa){
+        //Anima o resultado mostrado em tela
+        compa.setVisibility(View.VISIBLE);
+        compa.startAnimation(animBlink);
+
+        //encerra a animacao em tela
+        Handler hand = new Handler();
+        hand.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                compa.clearAnimation();
+            }
+        },5000);
     }
 
+    public void victory(){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.congratulations);
+        mediaPlayer.start();
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.victoryscreen, (ViewGroup) findViewById(R.id.sweetvictory));
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.CENTER,0,-100);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
+    public void defeat(){
+        final MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.bluem);
+        mediaPlayer.start();
+    }
 }

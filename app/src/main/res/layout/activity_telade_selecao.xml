@@ -30,20 +30,20 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.060"
         app:srcCompat="@drawable/logomegaverde2" />
 
     <TextView
         android:id="@+id/Teste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="[ ]"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/button3"
@@ -88,15 +88,15 @@
         app:backgroundTint="#7FAC6D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.060" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="389dp"
-        android:layout_height="368dp"
+        android:layout_width="360dp"
+        android:layout_height="366dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
 
                 <CheckBox
                     android:id="@+id/checkBox1"
-                    android:layout_width="61dp"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
                     android:button="@drawable/checkbox_circulo"
                     android:text="1"
@@ -358,6 +358,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/LinarLayoutRow5"
                 android:layout_width="match_parent"
                 android:layout_height="72dp"
                 android:background="#F9F3E2"
@@ -416,6 +417,319 @@
                     android:layout_weight="1"
                     android:button="@drawable/checkbox_circulo"
                     android:text="30"
+                    app:buttonTint="#7FAA6D" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow6"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="31"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="32"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="33"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="34"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="35"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="36"
+                    app:buttonTint="#7FAA6D" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow7"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="37"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="38"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="39"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="40"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="41"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="42"
+                    app:buttonTint="#7FAA6D" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow8"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="43"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="44"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="45"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="46"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="47"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="48"
+                    app:buttonTint="#7FAA6D" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow9"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="#F9F3E2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="49"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="50"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="51"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="52"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="53"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="54"
+                    app:buttonTint="#7FAA6D" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutRow10"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkBox55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="55"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="56"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="57"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="58"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="59"
+                    app:buttonTint="#7FAA6D" />
+
+                <CheckBox
+                    android:id="@+id/checkBox60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@drawable/checkbox_circulo"
+                    android:text="60"
                     app:buttonTint="#7FAA6D" />
             </LinearLayout>
         </LinearLayout>
